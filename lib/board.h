@@ -1,0 +1,21 @@
+#ifndef BOARD_H
+#define BOARD_H
+#define RETRY_MAX 5
+
+#include<set>
+enum ResponseType { HIT, MISS, NEARMISS };
+
+class Board {
+private:
+  int move_count, height, width;
+  bool **board;
+
+
+public:
+  Board(const int &width, const int &height);
+  ~Board();
+  void init(const int &num_ships);
+  ResponseType guess(const int &x, const int &y);
+};
+
+#endif /* BOARD_H */
