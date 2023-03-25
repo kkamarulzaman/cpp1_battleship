@@ -7,6 +7,10 @@ BaseGame::BaseGame(){
     this->board->init(SHIP_COUNT);
 }
 
+BaseGame::~BaseGame() {
+    delete this->board;
+}
+
 int BaseGame::run()
 {
     if(this->solve() != SHIP_COUNT)
