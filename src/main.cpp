@@ -29,9 +29,9 @@ void run(BaseGame *control, BaseGame *assignment) {
       std::cout << "F" << std::endl;
     }
   }
-  catch(std::exception e)
+  catch(const std::exception& e)
   {
-      std::cout << "failed" << e.what() << std::endl;
+      std::cerr << "failed: " << e.what() << std::endl;
   }
 }
 

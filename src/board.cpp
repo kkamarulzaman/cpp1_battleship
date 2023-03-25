@@ -23,8 +23,8 @@ struct Point {
   static Point random(const int &max_width, const int &max_height) {
     std::default_random_engine random_engine(std::random_device{}());
 
-    std::uniform_int_distribution<int> x_distribution(0, max_width);
-    std::uniform_int_distribution<int> y_distribution(0, max_height);
+    std::uniform_int_distribution<int> x_distribution(0, max_width - 1);
+    std::uniform_int_distribution<int> y_distribution(0, max_height - 1);
 
     auto x = x_distribution(random_engine);
     auto y = y_distribution(random_engine);
