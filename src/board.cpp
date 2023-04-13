@@ -85,12 +85,11 @@ bool Board::has_adjacent() {
 }
 
 ResponseType Board::guess(const int &x, const int &y) {
+  this->move_count += 1;
   if (this->board[x][y]) {
     return ResponseType::HIT;
   }
   return this->has_adjacent() ? ResponseType::NEARMISS : ResponseType::MISS;
-
-  this->move_count += 1;
 }
 
 void Board::print() {

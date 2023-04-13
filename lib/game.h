@@ -33,6 +33,7 @@ protected:
 };
 
 class AssignmentGame : public BaseGame {
+  protected:
     int solve() override {
         //IMPLEMENT YOUR SEARCH ALGORITHM HERE
         return SHIP_COUNT;
