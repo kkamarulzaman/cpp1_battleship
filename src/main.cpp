@@ -41,5 +41,7 @@ int main() {
 
     run(control, assignment);
 
+    delete control;
+    delete assignment;
     return 0;
 }
