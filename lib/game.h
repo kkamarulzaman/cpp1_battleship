@@ -35,20 +35,19 @@ protected:
 class AssignmentGame : public BaseGame {
   protected:
     int solve() override {
-        int SHIP_COUNT = 0;
-        for(int i = 0; i < HEIGHT - 1; i++) 
-        { 
+        int SHIP_COUNT;
+        for(int i = 0; i < HEIGHT - 1; i++)
+        {
           for(int j = 0; j < WIDTH - 1; j++)
           {
-            if((this->board->guess(i,j) == ResponseType::HIT)
-               { 
-                 SHIP_COUNT += 1;
-               }
+            if(this->board->guess(i,j) == true)
+            {
+              SHIP_COUNT += 1;
+            }
           }
         }
-        return SHIP_COUNT;
+        return SHIP_COUNT;    
     }
 };
-
 
 #endif /* GAME_H */
