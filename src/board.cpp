@@ -1,4 +1,4 @@
-#include "../lib/board.h"
+#include "board.h"
 #include <iostream>
 #include <random>
 #include <set>
@@ -21,7 +21,7 @@ struct Point {
   }
 
   static Point random(const int &max_width, const int &max_height) {
-    std::default_random_engine random_engine(std::random_device{}());
+    std::default_random_engine random_engine(std::random_device());
 
     std::uniform_int_distribution<int> x_distribution(0, max_width - 1);
     std::uniform_int_distribution<int> y_distribution(0, max_height - 1);
@@ -51,7 +51,7 @@ Board::~Board() {
 void Board::init(const int &num_ships) {
   std::set<Point, PointCompare> points;
   while (points.size() < num_ships) {
-    auto p = Point::random(this->width, this->height);
+    auto p = random(this->width, this->height);
     points.insert(p);
   }
 
